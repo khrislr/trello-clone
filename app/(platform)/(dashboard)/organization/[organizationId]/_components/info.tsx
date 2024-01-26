@@ -10,9 +10,11 @@ export default function Info() {
 
   if (!isLoaded) {
     return (
-      <p>
-        <Info.Skeleton />
-      </p>
+      <div>
+        <p>
+          <Info.Skeleton />
+        </p>
+      </div>
     );
   }
   return (
