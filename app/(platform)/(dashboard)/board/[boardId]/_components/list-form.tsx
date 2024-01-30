@@ -6,7 +6,7 @@ import { ElementRef, useRef, useState } from "react";
 import { useEventListener, useOnClickOutside } from "usehooks-ts";
 import { FormInput } from "@/components/form/form-input";
 import { useParams, useRouter } from "next/navigation";
-import { FormSubmit } from "@/components/form/form-button";
+import { FormSubmit } from "@/components/form/form-submit";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
 import { createList } from "@/actions/create-list";

@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { MoreHorizontal, X } from "lucide-react";
-import { FormSubmit } from "@/components/form/form-button";
+import { FormSubmit } from "@/components/form/form-submit";
 import { Separator } from "@/components/ui/separator";
 import { useAction } from "@/hooks/use-action";
 import { deleteList } from "@/actions/delete-list";

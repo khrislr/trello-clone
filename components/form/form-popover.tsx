@@ -8,7 +8,7 @@ import {
 
 import { useAction } from "@/hooks/use-action";
 import { FormInput } from "./form-input";
-import { FormSubmit } from "./form-button";
+import { FormSubmit } from "./form-submit";
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
 import { createBoard } from "@/actions/create-board";
