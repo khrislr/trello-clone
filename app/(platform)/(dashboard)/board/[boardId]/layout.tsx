@@ -54,7 +54,7 @@ const BoardIdLayout = async ({
   return (
     <div
       style={{ backgroundImage: `url(${board.imageThumbUrl})` }}
-      className="relative h-screen bg-no-repeat bg-cover bg-center"
+      className="relative h-screen bg-no-repeat bg-cover"
     >
       <BoardNavbar data={board} />
       <div className="absolute inset-0 bg-black/10" />
