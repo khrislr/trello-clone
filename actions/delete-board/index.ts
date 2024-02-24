@@ -7,12 +7,15 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { InputType, ReturnType } from "./types";
 import { ACTION, ENTITY_TYPE } from "@prisma/client";
+import { checkSubscription } from "@/lib/subscription";
 import { createAuditLog } from "@/lib/create-audit-log";
-import { createSafeAction } from "@/lib/create-safe-action";
 import { decreaseAvailableCount } from "@/lib/org-limit";
+import { createSafeAction } from "@/lib/create-safe-action";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
+
+  const isPro = await checkSubscription();
 
   if (!userId || !orgId) {
     return {
@@ -32,7 +35,9 @@ const handler = async (data: InputType): Promise<ReturnType> => {
       },
     });
 
-    await decreaseAvailableCount();
+    if (!isPro) {
+      await decreaseAvailableCount();
+    }
 
     await createAuditLog({
       entityTitle: board.title,
